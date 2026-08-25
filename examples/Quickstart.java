@@ -1,8 +1,8 @@
-import com.formable.Formable;
-import com.formable.FormableException;
-import com.formable.model.CreateSignatureRequest;
-import com.formable.model.Signer;
-import com.formable.model.TemplateSignerRole;
+import com.formabledocs.Formable;
+import com.formabledocs.FormableException;
+import com.formabledocs.model.CreateSignatureRequest;
+import com.formabledocs.model.Signer;
+import com.formabledocs.model.TemplateSignerRole;
 import java.nio.file.Path;
 import java.util.List;
 

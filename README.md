@@ -12,7 +12,7 @@ Maven:
 
 ```xml
 <dependency>
-  <groupId>com.formable</groupId>
+  <groupId>com.formabledocs</groupId>
   <artifactId>formable-sdk</artifactId>
   <version>0.1.0</version>
 </dependency>
@@ -21,13 +21,13 @@ Maven:
 Gradle:
 
 ```kotlin
-implementation("com.formable:formable-sdk:0.1.0")
+implementation("com.formabledocs:formable-sdk:0.1.0")
 ```
 
 ## Usage
 
 ```java
-import com.formable.Formable;
+import com.formabledocs.Formable;
 
 Formable formable = new Formable(System.getenv("FORMABLE_API_KEY"));
 ```
@@ -35,7 +35,7 @@ Formable formable = new Formable(System.getenv("FORMABLE_API_KEY"));
 ### Templates
 
 ```java
-import com.formable.model.TemplateSignerRole;
+import com.formabledocs.model.TemplateSignerRole;
 import java.nio.file.Path;
 import java.util.List;
 
@@ -56,8 +56,8 @@ var edit = formable.templates.createEditUrl(templateId);
 ### Signature requests
 
 ```java
-import com.formable.model.CreateSignatureRequest;
-import com.formable.model.Signer;
+import com.formabledocs.model.CreateSignatureRequest;
+import com.formabledocs.model.Signer;
 import java.time.Instant;
 
 // Formable emails each signer a signing link
@@ -93,10 +93,10 @@ var envelope = formable.signatureRequests.getSignedEnvelope(embedded.signatureRe
 ### Redline requests
 
 ```java
-import com.formable.model.CreateRedlineRequest;
-import com.formable.model.RedlineMember;
-import com.formable.model.RedlineMemberRole;
-import com.formable.model.RedlineRequestMetadata;
+import com.formabledocs.model.CreateRedlineRequest;
+import com.formabledocs.model.RedlineMember;
+import com.formabledocs.model.RedlineMemberRole;
+import com.formabledocs.model.RedlineRequestMetadata;
 import java.util.List;
 
 var created = formable.redlineRequests.create(
@@ -136,7 +136,7 @@ var health = formable.health();
 All non-2xx responses throw a `FormableException` with the server's error message, HTTP status, and parsed response body.
 
 ```java
-import com.formable.FormableException;
+import com.formabledocs.FormableException;
 
 try {
     formable.signatureRequests.get("missing-id");
