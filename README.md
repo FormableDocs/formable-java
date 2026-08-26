@@ -171,3 +171,15 @@ Formable formable = Formable.builder()
 ```bash
 ./mvnw test
 ```
+
+## Publishing
+
+Requires Java 17+, a GPG key, a verified `com.formabledocs` namespace, and a Central Portal token in `~/.m2/settings.xml`.
+
+```bash
+export JAVA_HOME="/opt/homebrew/opt/openjdk@17/libexec/openjdk.jdk/Contents/Home"
+export PATH="$JAVA_HOME/bin:$PATH"
+./mvnw -Prelease clean deploy
+```
+
+After validation, publish the deployment at [central.sonatype.com/publishing/deployments](https://central.sonatype.com/publishing/deployments).
